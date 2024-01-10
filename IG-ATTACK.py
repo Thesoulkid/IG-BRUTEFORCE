@@ -2,6 +2,7 @@ from cryptography.fernet import Fernet
 import webbrowser
 import requests
 import os
+import sys
 
 def load_key_from_file(key_file):
     with open(key_file, 'rb') as file:
@@ -23,42 +24,49 @@ def decrypt_file(encrypted_file_path, key):
         file.write(decrypted_data)
 
 def check_for_updates(current_version):
-    # Replace 'your-repo-url' with the URL of your GitHub repository's raw version file
-    version_url = 'https://github.com/WHITEDH4CKER/IG-BRUTEFORCE/version.txt'
+    repo_url = 'https://raw.githubusercontent.com/WHITEDH4CKER/IG-BRUTEFORCE/main/version.txt'
 
     try:
-        response = requests.get(version_url)
+        response = requests.get(repo_url)
+        response.raise_for_status()
         latest_version = response.text.strip()
         return latest_version > current_version
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         print(f"Error checking for updates: {str(e)}")
         return False
 
 def ask_for_permission():
-    user_response = input("Do you want to use this script for educational purposes? (y/n): ").lower()
+    user_response = input("Do you want to use this tool for educational purposes? (y/n): ").lower()
     return user_response == 'y'
 
 if __name__ == "__main__":
-    current_version = '1.0'  # Replace with your current version
+    version_file_path = 'version.txt'
+    current_version = '1.0'
     print(f"Current version: {current_version}")
 
-    if check_for_updates(current_version):
-        user_input = input("A new version is available. Do you want to update? (y/n): ").lower()
-        if user_input == 'y' or user_input == 'yes':
-            print("Updating...")
-            # Add your update logic here
-            webbrowser.open("https://github.com/WHITEDH4CKER/IG-BRUTEFORCE")  # Open a browser or perform update steps
-            exit()
-        else:
-            print("Continuing with the current version.")
+    try:
+        with open(version_file_path, 'r') as file:
+            version_txt = file.read().strip()
+            if version_txt != current_version:
+                print("A new version is available.")
+                user_input = input("Do you want to update? (y/n): ").lower()
+                if user_input == 'y' or user_input == 'yes':
+                    print("Updating...")
+                    webbrowser.open("https://github.com/WHITEDH4CKER/IG-BRUTEFORCE")
+                    sys.exit()
+            else:
+                print("You have the latest version.")
+    except FileNotFoundError:
+        print("Error: version.txt file not found. Continue with the current version.")
 
     permission_given = ask_for_permission()
 
     if not permission_given:
         print("Sorry, this script is only for educational purposes.")
-        exit()
+        sys.exit()
 
-    key_file = 'encryption_key.key'  # Specify the file to store the encryption key
+    key_file = 'encryption_key.key'
+    encrypted_script_path = 'reading.py.enc'
 
     if os.path.exists(key_file):
         # Load the key from the file for decryption
@@ -72,7 +80,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Invalid key: {str(e)}")
             webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
-            exit()
+            sys.exit()
 
     encrypted_script_path = 'reading.py.enc'  # Replace with the actual path to your encrypted script file
 
@@ -82,3 +90,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Invalid key or decryption error: {str(e)}")
         webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
+        sys.exit()
