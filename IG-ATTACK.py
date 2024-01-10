@@ -2,7 +2,7 @@ from cryptography.fernet import Fernet
 import webbrowser
 import requests
 import os
-import sys
+import subprocess
 
 def load_key_from_file(key_file):
     with open(key_file, 'rb') as file:
@@ -35,9 +35,22 @@ def check_for_updates(current_version):
         print(f"Error checking for updates: {str(e)}")
         return False
 
+def update_script():
+    print("Updating...")
+    subprocess.run(["bash", "update.sh"])
+    exit()
+
 def ask_for_permission():
     user_response = input("Do you want to use this tool for educational purposes? (y/n): ").lower()
     return user_response == 'y'
+
+def join_telegram_group():
+    telegram_response = input("Are you a member of the Telegram group? (y/n): ").lower()
+    if telegram_response == 'y' or telegram_response == 'yes':
+        print("Great! You're already a member.")
+    else:
+        print("Join our Telegram group for updates: https://t.me/WHITEDR00M")
+        webbrowser.open("https://t.me/WHITEDR00M")
 
 if __name__ == "__main__":
     version_file_path = 'version.txt'
@@ -51,9 +64,7 @@ if __name__ == "__main__":
                 print("A new version is available.")
                 user_input = input("Do you want to update? (y/n): ").lower()
                 if user_input == 'y' or user_input == 'yes':
-                    print("Updating...")
-                    webbrowser.open("https://github.com/WHITEDH4CKER/IG-BRUTEFORCE")
-                    sys.exit()
+                    update_script()
             else:
                 print("You have the latest version.")
     except FileNotFoundError:
@@ -62,8 +73,10 @@ if __name__ == "__main__":
     permission_given = ask_for_permission()
 
     if not permission_given:
-        print("Sorry, this script is only for educational purposes.")
-        sys.exit()
+        print("Sorry, this tool is only for educational purposes.")
+        exit()
+
+    join_telegram_group()  # Add the question about joining the Telegram group
 
     key_file = 'encryption_key.key'
     encrypted_script_path = 'reading.py.enc'
@@ -80,7 +93,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Invalid key: {str(e)}")
             webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
-            sys.exit()
+            exit()
 
     encrypted_script_path = 'reading.py.enc'  # Replace with the actual path to your encrypted script file
 
@@ -90,4 +103,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Invalid key or decryption error: {str(e)}")
         webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
-        sys.exit()
+        exit()
