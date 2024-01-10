@@ -17,6 +17,7 @@ sleep 1.5
 cd ..
 rm -rf IG-BRUTEFORCE
 git clone https://github.com/WHITEDH4CKER/IG-BRUTEFORCE
+cd ..
 cd IG-BRUTEFORCE
 ls
 printf "\n\e[1;92m Update Complete ...\n\e[0m"
