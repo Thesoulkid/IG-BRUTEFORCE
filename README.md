@@ -31,23 +31,19 @@ pkg install python -y
 ```
 
 ```shell script
-pip install mechanize
+pkg install tor
 ```
 
 ```shell script
-pip install colorama termcolor requests
+git clone https://github.com/WHITEDH4CKER/IG-BRUTEFORCE
 ```
 
 ```shell script
-git clone https://github.com/WHITEDH4CKER/FB-BRUTEFORCE
+cd IG-BRUTEFORCE
 ```
 
 ```shell script
-cd FB-BRUTEFORCE
-```
-
-```shell script
-python FB-ATTACK.py
+python IG-ATTACK.py
 ```
 ***
 
