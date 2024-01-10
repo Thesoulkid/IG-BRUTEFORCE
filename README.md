@@ -44,6 +44,15 @@ This software is distributed under the GNU General Public License version 3 (GPL
 ## LEGAL NOTICE
 THIS SOFTWARE IS PROVIDED FOR EDUCATIONAL USE ONLY! IF YOU ENGAGE IN ANY ILLEGAL ACTIVITY THE AUTHOR DOES NOT TAKE ANY RESPONSIBILITY FOR IT. BY USING THIS SOFTWARE YOU AGREE WITH THESE TERMS.
 
+***
+
+ ## Donate/Support: 
+<p align="center">
+<a href="https://www.buymeacoffee.com/whitedh4cker" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+  <br> </p>
+  
+***
+
 ## 👤My Account For Support👤:
 
 ### <p align="left"> ➡️ <a href="https://instagram.com/whitedh4cker" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="whitedh4cker" height="40" width="40" /></a>[Instagram](https://Instagram.com/WHITEDH4CKER)</p>
