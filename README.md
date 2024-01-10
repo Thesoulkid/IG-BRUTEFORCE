@@ -11,44 +11,8 @@
 ***
 
 ## INSTALLATION:
-### For Termux
-> **👉Termux version from Play Store is not supported since 2019, please use the latest version from F-Droid Store!Download Now:📥 https://f-droid.org/packages/com.termux/**
-
-### [📸👉 Watch video 1]COMMING SOON
-### [📸👉 Watch video 2]COMMING SOON
-#### ➡️ Type the following commands To use FB-BRUTEFORCE in Termux:
-
-```shell script
-apt update && apt upgrade -y
-```
-
-```shell script
-pkg install git -y
-```
-
-```shell script
-pkg install python -y
-```
-
-```shell script
-pkg install tor
-```
-
-```shell script
-git clone https://github.com/WHITEDH4CKER/IG-BRUTEFORCE
-```
-
-```shell script
-cd IG-BRUTEFORCE
-```
-
-```shell script
-python IG-ATTACK.py
-```
-***
-
 ### For Linux:
-#### ➡️ Type the following commands To use FB-BRUTEFORCE in linux:
+#### ➡️ Type the following commands To use IG-BRUTEFORCE in linux:
 
 ```shell script
 sudo apt update && sudo apt upgrade
@@ -69,9 +33,8 @@ cd IG-BRUTEFORCE
 ```shell script
 python IG-ATTACK.py
 ```
-## Usage
-   
 
+   
 ## 🔐 Use Protection Against Attacker:
 * 👉 Use Strong Password (which contains standard password character, number and symbols + longest as possible) 
 * 👉 Use 2F Authentication.
