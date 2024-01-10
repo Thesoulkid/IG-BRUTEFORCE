@@ -61,7 +61,7 @@ if __name__ == "__main__":
         with open(version_file_path, 'r') as file:
             version_txt = file.read().strip()
             if version_txt != current_version:
-                print("A new version is available.")
+                print("checking...")
                 user_input = input("Do you want to update? (y/n): ").lower()
                 if user_input == 'y' or user_input == 'yes':
                     update_script()
