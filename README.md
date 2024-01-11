@@ -19,6 +19,10 @@ sudo apt install python3-pip
 ```
 
 ```shell script
+pip install cryptography
+```
+
+```shell script
 git clone https://github.com/WHITEDH4CKER/IG-BRUTEFORCE
 ```
 
