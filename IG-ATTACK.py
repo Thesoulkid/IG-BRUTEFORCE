@@ -35,7 +35,7 @@ def decrypt_file(encrypted_file_path, key):
         file.write(decrypted_data)
 
 def ask_for_permission():
-    user_response = input("Are you using this script for educational purposes? (yes/no): ").lower()
+    user_response = input("Are you using this tool for educational purposes? (yes/no): ").lower()
     return user_response == 'yes'
 
 def check_telegram_membership():
@@ -65,7 +65,9 @@ if __name__ == "__main__":
     if not key_present:
         key_file = 'encryption_key.key'  # Specify the file to store the encryption key
         encryption_key = generate_key()
-        save_key_to_file(encryption_key, key_file)
+        
+        if ask_for_key():
+            save_key_to_file(encryption_key, key_file)
     else:
         key_file = 'encryption_key.key'  # Specify the file to store the encryption key
 
@@ -86,4 +88,6 @@ if __name__ == "__main__":
         custom_error_message = "Invalid key or decryption error. Please check if the key is correct."
         print(custom_error_message)
         print(f"Original Exception: {str(e)}")
-        webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
+        
+        if not ask_for_key():
+            webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
