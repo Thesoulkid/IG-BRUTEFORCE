@@ -33,10 +33,6 @@ cd IG-BRUTEFORCE
 ```shell script
 python IG-ATTACK.py
 ```
-***
-### <p align="left">  🔑 <a href="https://whatsapp.com/channel/0029VaIlY264IBh9T2iaey0r" target="blank"><img align="center" src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/WhatsApp.svg" alt="whitedh4cker" height="40" width="40" /></a>[buy tool key](https://wa.me/17023565387?text=Hello%20%F0%9F%91%8B%20I%20want%20to%20use%20IG-BRUTEFORCE%20tool.%20Can%20I%20have%20the%20key%F0%9F%97%9D%EF%B8%8F)</p>
-***
-
 
 ## Features 
 
@@ -44,7 +40,7 @@ python IG-ATTACK.py
 
 •10M Password
 
-•Use Tor(comming soon)
+•Use Tor
 
 •proxy(comming soon)
 
@@ -52,7 +48,7 @@ python IG-ATTACK.py
 
 •Kali Linux
 
-•Termux(coming soon)
+•Termux
 
 ## Language is used to Make this tool
 
