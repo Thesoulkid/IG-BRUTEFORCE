@@ -1,3 +1,6 @@
+## DEVELOPED BY WHITEDH4CKER
+## Don't steal my code read license21  
+## if you use any part of code then give me credit
 from __future__ import absolute_import
 from __future__ import print_function
 import requests, sys, threading, time, os, random, webbrowser
