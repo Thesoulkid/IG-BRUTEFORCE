@@ -125,4 +125,8 @@ THIS SOFTWARE IS PROVIDED FOR EDUCATIONAL USE ONLY! IF YOU ENGAGE IN ANY ILLEGAL
   
  ## <p align="center">```WHITEDH4CKER [DEV_SANJAY]```
 
+  ### Visitors :
+
+![Visitor Count](https://profile-counter.glitch.me/WHITEDH4CKER/count.svg)
+
 <p align="right"> Last FAQ Update: 06.01.2024 </p>
