@@ -7,6 +7,40 @@
 ***
 
 ## INSTALLATION:
+### For Termux
+> **👉Termux version from Play Store is not supported since 2019, please use the latest version from F-Droid Store!Download Now:📥 https://f-droid.org/packages/com.termux/**
+
+### [📸👉 Watch video ](Comming soon)
+#### ➡️ Type the following commands To use FB-BRUTEFORCE in Termux:
+
+```shell script
+apt update && apt upgrade -y
+```
+
+```shell script
+pkg install git -y
+```
+
+```shell script
+pkg install python -y
+```
+
+```shell script
+pip install colorama termcolor requests
+```
+
+```shell script
+git clone https://github.com/WHITEDH4CKER/IG-BRUTEFORCE
+```
+
+```shell script
+cd IG-BRUTEFORCE
+```
+
+```shell script
+python IG-ATTACK.py
+```
+***
 ### For Linux:
 #### ➡️ Type the following commands To use IG-BRUTEFORCE in linux:
 
