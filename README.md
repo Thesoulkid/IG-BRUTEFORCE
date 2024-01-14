@@ -6,7 +6,7 @@
 ![App Screenshot](https://github.com/WHITEDH4CKER/IG-BRUTEFORCE/blob/main/Screenshots/Screenshot_1.png)
 ***
 
-![App Screenshot](https://github.com/WHITEDH4CKER/IG-BRUTEFORCE/blob/main/Screenshots/Screenshots_2.jpg)
+![App Screenshot](https://github.com/WHITEDH4CKER/IG-BRUTEFORCE/blob/main/Screenshots/Screenshot_2.jpg)
 ***
 
 ## INSTALLATION:
