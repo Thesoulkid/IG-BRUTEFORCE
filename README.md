@@ -6,6 +6,9 @@
 ![App Screenshot](https://github.com/WHITEDH4CKER/IG-BRUTEFORCE/blob/main/Screenshots/Screenshot_1.png)
 ***
 
+![App Screenshot](https://github.com/WHITEDH4CKER/IG-BRUTEFORCE/blob/main/Screenshots/Screenshots_2.jpg)
+***
+
 ## INSTALLATION:
 ### For Termux
 > **👉Termux version from Play Store is not supported since 2019, please use the latest version from F-Droid Store!Download Now:📥 https://f-droid.org/packages/com.termux/**
