@@ -13,8 +13,8 @@
 ### For Termux
 > **👉Termux version from Play Store is not supported since 2019, please use the latest version from F-Droid Store!Download Now:📥 https://f-droid.org/packages/com.termux/**
 
-### [📸👉 Watch video ](Comming soon)
-#### ➡️ Type the following commands To use FB-BRUTEFORCE in Termux:
+### [📸👉 Watch video ](https://www.instagram.com/reel/C1vTtrLSxv-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
+#### ➡️ Type the following commands To use IG-BRUTEFORCE in Termux:
 
 ```shell script
 apt update && apt upgrade -y
