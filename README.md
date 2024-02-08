@@ -29,7 +29,7 @@ pkg install python -y
 ```
 
 ```shell script
-pip install colorama termcolor requests
+pip install colorama termcolor requests stem
 ```
 
 ```shell script
