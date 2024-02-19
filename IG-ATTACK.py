@@ -29,9 +29,9 @@ print('''
 ██║╚██████╔╝------██████╔╝██║--██║╚██████╔╝---██║---███████╗██║-----╚██████╔╝██║--██║╚██████╗███████╗
 ╚═╝-╚═════╝-------╚═════╝-╚═╝--╚═╝-╚═════╝----╚═╝---╚══════╝╚═╝------╚═════╝-╚═╝--╚═╝-╚═════╝╚══════╝
 \033[35m====================================================================================================\033[35m
-\033[37m#                                                                       Developed by WHITEDH4CKER  #\033[37m
+\033[37m#                                                                       Developed by MODDER SOULKID #\033[37m
 \033[33m====================================================================================================\033[33m
-\033[34m#                                                    https://github.com/WHITEDH4CKER/IG-BRUTEFORCE #\033[34m      
+\033[34m#                                                                                      ROYAL MARCOS#\033[34m      
 \033[39m====================================================================================================\033[39m
 \033[32m''')
 
@@ -43,7 +43,7 @@ class InstaBrute(object):
             Combo = input('WORDLIST PATH : ')
             print(gr+"""
 ==================================
-[---]  """ + wi + """ WHITEDH4CKER """ + gr + """        [---]
+[---]  """ + wi + """ MODDER SOULKID """ + gr + """        [---]
 ==================================
 [---]  """ + wi + """ IG-BRUTEFORCE """ + gr + """       [---]
 ==================================
@@ -61,10 +61,10 @@ class InstaBrute(object):
             print('Sorry, this tool is only for educational purposes.')
             sys.exit()
 
-        telegram_member = input('Are you a member of our Telegram group? (y/n): ')
+        telegram_member = input('Do you follow my Instagram account? (y/n): ')
         if telegram_member.lower() != 'y':
-            print('Please join our Telegram group: https://t.me/WHITEDR00M')
-            webbrowser.open('https://t.me/WHITEDR00M', new=2)  # Open the link in the default browser
+            print('Follow On Instagram: sou1.m4rcos')
+            webbrowser.open('https://www.instagram.com/sou1.m4rcos', new=2)  # Open the link in the default browser
             sys.exit()
 
         tor_use = input('Do you want to use Tor? (y/n): ')
