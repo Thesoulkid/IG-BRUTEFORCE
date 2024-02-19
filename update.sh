@@ -16,7 +16,7 @@ printf "\n \e[1;92mUpdating \e[1;94mWHITEDH4CKER\e[1;92m directory ...\n\n"
 sleep 1.5
 cd ..
 rm -rf IG-BRUTEFORCE
-git clone https://github.com/WHITEDH4CKER/IG-BRUTEFORCE
+git clone https://github.com/Thesoulkid/IG-BRUTEFORCE
 cd ..
 cd IG-BRUTEFORCE
 ls
