@@ -1,4 +1,4 @@
-## DEVELOPED BY WHITEDH4CKER
+## DEVELOPED BY MODDER SOULKID
 ## Don't steal my code read license21  
 ## if you use any part of code then give me credit
 from __future__ import absolute_import
